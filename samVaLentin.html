@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .btn-yes {
+      background-color: #28a745;
+      min-width: 100px;
+    }
+
+    .btn-no {
+      background-color: #dc3545;
+      min-width: 100px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    let yesButtonClicked = false;
+    let noButtonSize = 100;
+    let currentIndex = 0;
+
+	const randomTexts = [
+	  "Sure?",
+	  "Come",
+	  "Don't be silly",
+	  "It will be fun",
+	  "Comeeee",
+	  "Don't make me sad",
+	  "If you press me a puppy dies",
+	  "Will you reconsider?",
+	  "Think about it",
+	  "You're breaking my heart",
+	  "Take a chance",
+	  "Don't say no",
+	  "Give it a shot",
+	  "Make my day",
+	  "You're the best",
+	  "Say yes!",
+	  "Let's do this",
+	  "I believe in you",
+	  "Please say yes",
+	  "Why not?",
+	  "Just say maybe",
+	  "You won't regret it",
+	  "Trust me, it's worth it",
+	];
+
+    function changeNoButtonText() {
+    const noButton = document.getElementById('btn-no');
+		const yesButton = document.getElementById('btn-yes');
+
+		const randomText = randomTexts[currentIndex];
+		currentIndex = (currentIndex + 1) % randomTexts.length;
+
+		noButton.innerText = randomText;
+		noButton.style.fontSize = noButtonSize + 'px';
+		noButtonSize = Math.max(30, noButtonSize - 5);
+
+		const currentYesButtonSize = parseInt(yesButton.style.fontSize || 30);
+		yesButton.style.fontSize = Math.min(50, currentYesButtonSize + 5) + 'px';
+
+		if (noButtonSize <= 30) {
+			const randomText = randomTexts[currentIndex];
+			currentIndex = (currentIndex + 1) % randomTexts.length;
+			noButton.innerText = randomText;
+				const currentYesButtonSize = parseInt(yesButton.style.fontSize || 30);
+				yesButton.style.fontSize = Math.min(1000, currentYesButtonSize + 10) + 'px';
+		}
+    }
+	function haDichoSi() {
+	  document.getElementById('valentine-content').style.display = 'none';
+	  document.getElementById('message').innerText = "I Knew It!";
+	  document.getElementById('message').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <div class="container" id="valentine-content">
+    <h1>Will you be my valentine?</h1>
+    <button id="btn-yes" class="btn btn-lg btn-yes" onclick="haDichoSi()">Yes</button>
+    <button id="btn-no" class="btn btn-lg btn-no" onclick="changeNoButtonText()">No</button>
+  </div>
+<div id="message" style="display: none; font-size: 36px; font-weight: bold; margin-top: 20px;"> </div>
+</body>
+</html>
