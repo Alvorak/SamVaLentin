@@ -31,6 +31,10 @@
 			 background-color: #dc3545;
 			 min-width: 100px;
 		}
+        .valentine-icon {
+        width: 50px; /* Puedes ajustar el tamaño según tus necesidades */
+        height: 50px; /* Puedes ajustar el tamaño según tus necesidades */
+         }
         #message {
             display: none;
             font-size: 24px;
@@ -96,7 +100,6 @@
             const randomText = randomTexts[currentIndex];
 			currentNoButtonSize = parseInt(noButton.style.fontSize || 30);
             currentIndex = randomIndex;
-            console.log(currentIndex);
             //Empezamos
 			if (currentNoButtonSize <= 10) {
                 const randomText = randomTexts[currentIndex];
@@ -143,7 +146,8 @@
 
 <body>
     <div class="container" id="valentine-content">
-        <h1>Will you be my valentine?</h1>
+        <h1>Will you be my Valentine?</h1>
+        <img src="img/uwu.jpg" alt="Icono de Valentine" class="valentine-icon">
         <button id="btn-yes"style="font-size: 100px;" class="btn btn-lg btn-yes" onclick="haDichoSi()">Yes</button>
         <button id="btn-no"style="font-size: 100px;" class="btn btn-lg btn-no" onclick="changeNoButtonText()">No</button>
         <img src="img/bob.jpg"  class="img-responsive" style="width: 70%; margin-top: 10px;">
