@@ -44,16 +44,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+         const imageFilenames = [
+                'cat1.jpg',
+                'cat2.jpg',
+                'cat3.jpg',
+                'ass.jpg',
+                'protest.jpg',
+                'cupon.jpg',
+                'hi.jpg',
+            ];
+
         let yesButtonClicked = false;
         let noButtonSize = 100;
         let currentIndex = 0;
-
         const randomTexts = [
             "Sure?",
-            "Come",
+            "Andale puto!",
             "Don't be silly",
             "It will be fun",
-            "Come!",
+            "Cum for me!",
             "Don't make me sad",
             "If you press me a puppy dies",
             "Will you reconsider?",
@@ -63,7 +72,10 @@
             "Don't say no",
             "Give it a shot",
             "Make my day",
-            "You're the best",
+            "You're not my first option",
+            "Be my pookie bear",
+            "MIAU",
+            "I know where you live",
             "Say yes!",
             "Let's do this",
             "I believe in you",
@@ -71,40 +83,39 @@
             "Why not?",
             "Just say maybe",
             "You won't regret it",
-            "Trust me, it's worth it",
+            "Trust me, it's worth it"
         ];
 
         function changeNoButtonText() {
             const noButton = document.getElementById('btn-no');
             const yesButton = document.getElementById('btn-yes');
 			const currentYesButtonSize = parseInt(yesButton.style.fontSize || 30);
+            //Texto aleatorio
+            const numberOfItems = randomTexts.length;
+            const randomIndex = Math.floor(Math.random() * numberOfItems-1) + 1;
             const randomText = randomTexts[currentIndex];
 			currentNoButtonSize = parseInt(noButton.style.fontSize || 30);
-            currentIndex = (currentIndex + 1) % randomTexts.length;
+            currentIndex = randomIndex;
+            console.log(currentIndex);
+            //Empezamos
 			if (currentNoButtonSize <= 10) {
                 const randomText = randomTexts[currentIndex];
-                currentIndex = (currentIndex + 1) % randomTexts.length;
                 noButton.innerText = randomText;
 				if(currentYesButtonSize < 160){
-					console.log('More');
 					yesButton.style.fontSize = Math.min(1000, currentYesButtonSize + 10) + 'px';
 					yesButton.style.fontSize = Math.min(1000, currentYesButtonSize + 10) + 'px';
 				}
             }else {
 			//Logs
 			var currentNoButtonSize = parseInt(noButton.style.fontSize || 30);
-			console.log('No antes ' + currentNoButtonSize)
 			
             noButton.innerText = randomText;
             noButton.style.fontSize = (currentNoButtonSize -10) + 'px';
             noButtonSize = Math.max(30, currentNoButtonSize - 10);
 			 currentNoButtonSize = parseInt(noButton.style.fontSize || 30);
-			console.log('No desp ' + currentNoButtonSize)
 
             const currentYesButtonSize = parseInt(yesButton.style.fontSize || 30);
-			console.log(currentYesButtonSize);
 				if(currentYesButtonSize < 160){
-					console.log('More');
 				    yesButton.style.fontSize = Math.min(1000, currentYesButtonSize + 10) + 'px';
 				}
 			}
@@ -116,7 +127,9 @@
             document.getElementById('message').style.display = 'block';
             // Agregar una imagen
             var img = document.createElement('img');
-            img.src = 'img/hi.jpg'; 
+            const randomIndex = Math.floor(Math.random() * imageFilenames.length);
+            const imagePath = 'img/' + imageFilenames[randomIndex];
+            img.src = imagePath; 
             img.alt = 'Tu puta madre';
             img.style.width = '100%'; 
            // Crear un nuevo div para la imagen
