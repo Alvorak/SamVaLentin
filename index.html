@@ -35,7 +35,9 @@
             display: none;
             font-size: 24px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 70%;
+            text-align: center;
+            padding: 20px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -112,6 +114,16 @@
             document.getElementById('valentine-content').style.display = 'none';
             document.getElementById('message').innerText = "I Knew It!";
             document.getElementById('message').style.display = 'block';
+            // Agregar una imagen
+            var img = document.createElement('img');
+            img.src = 'img/hi.jpg'; 
+            img.alt = 'Tu puta madre';
+            img.style.width = '100%'; 
+           // Crear un nuevo div para la imagen
+            var imgDiv = document.createElement('div');
+            imgDiv.appendChild(img);
+            // Insertar el nuevo div con la imagen debajo del texto en el div principal
+            document.getElementById('message').appendChild(imgDiv);
         }
     </script>
 </head>
@@ -121,6 +133,7 @@
         <h1>Will you be my valentine?</h1>
         <button id="btn-yes"style="font-size: 100px;" class="btn btn-lg btn-yes" onclick="haDichoSi()">Yes</button>
         <button id="btn-no"style="font-size: 100px;" class="btn btn-lg btn-no" onclick="changeNoButtonText()">No</button>
+        <img src="img/bob.jpg"  class="img-responsive" style="width: 70%; margin-top: 10px;">
     </div>
     <div id="message"> </div>
 </body>
