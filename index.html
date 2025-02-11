@@ -61,32 +61,28 @@
         let yesButtonClicked = false;
         let noButtonSize = 100;
         let currentIndex = 0;
-        const randomTexts = [
-            "Sure?",
-            "Andale puto!",
-            "Don't be silly",
-            "It will be fun",
-            "Don't make me sad",
-            "If you press me a puppy dies",
-            "Will you reconsider?",
-            "Think about it",
-            "You're breaking my heart",
-            "Take a chance",
-            "Don't say no",
-            "Give it a shot",
-            "Make my day",
-            "Be my pookie bear",
-            "MIAU",
-            "I know where you live",
-            "Say yes!",
-            "Let's do this",
-            "I believe in you",
-            "Please say yes",
-            "Why not?",
-            "Just say maybe",
-            "You won't regret it",
-            "Trust me, it's worth it"
-        ];
+        const randomTexts =const randomTexts = [
+	    "You won’t regret it, trust me.",
+	    "This is your moment.",
+	    "You know you want to.",
+	    "You can’t resist, can you?",
+	    "You’re about to make the best decision ever.",
+	    "Say yes, and the world will be brighter.",
+	    "Come on, don’t leave me hanging.",
+	    "Make the leap, it’ll be worth it.",
+	    "Don’t overthink it, just go for it.",
+	    "It’s now or never.",
+	    "You won’t know until you try.",
+	    "You can’t say no to adventure.",
+	    "The best things in life are unexpected.",
+	    "This is your chance to shine.",
+	    "Sometimes, you just have to take the risk.",
+	    "You’re this close to a great time.",
+	    "Go ahead, take the plunge.",
+	    "One step forward, the world’s yours.",
+	    "Don’t make me beg!",
+	    "It’ll be fun, promise."
+	];
 
         function changeNoButtonText() {
             const noButton = document.getElementById('btn-no');
@@ -144,7 +140,7 @@
 
 <body>
     <div class="container" id="valentine-content">
-        <h1>How about we meet up?</h1>
+        <h1>Will you be my Valentine?</h1>
         <img src="img/uwu.jpg" alt="Icono de Valentine" class="valentine-icon">
         <button id="btn-yes"style="font-size: 100px;" class="btn btn-lg btn-yes" onclick="haDichoSi()">Yes</button>
         <button id="btn-no"style="font-size: 100px;" class="btn btn-lg btn-no" onclick="changeNoButtonText()">No</button>
